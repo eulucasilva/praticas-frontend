@@ -11,7 +11,7 @@
 >3. No corpo da página, escreva instruções HTML para descrever os seguintes tópicos:
 >a. Informações pessoais para que a recrutadora possa entrar em contato (Nome, sobrenome, email, telefone, endereço do linkedln);
 >b. Carta de apresentação onde você deve descrever suas experiências acadêmicas e profissionais, mostre como você pode contribuir com a empresa e por fim, despedida e assinatura;
->c. Um link para uma outra página (porƟfolio.html) onde será apresentado todas as suas páginas web que foram criadas durante o período em sala de aula com seus respecƟvos links. 
+>c. Um link para uma outra página (portfolio.html) onde será apresentado todas as suas páginas web que foram criadas durante o período em sala de aula com seus respectivos links. 
 >4. Utilize as tags HTML aprendidas em sala para formatar o seu conteúdo (\<p>,\<h1>a\<h6>, \<hr/>, \<br/>, \<ul>, \<ol>, \<a>, \<img>, etc);
 >5. Teste seu site em pelo menos dois navegadores web para verificar se está tudo correto;
 >6. Publique seu site no repositório github (https://github.com/) e disponibilize o endereço.
