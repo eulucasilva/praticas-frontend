@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Roboto:wght@300&display=swap');
+
+.grid-container {
+    width: 600px;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: 1fr 1fr 20%;
+    gap: 10px 5px;
+    text-align: center;
+}
+
+span {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+}
+
+header {
+    background-color: #052b69;
+    grid-column: 1 / -1;
+    font-family: 'Lato', sans-serif;
+}
+
+nav {
+    background-color: bisque;
+    grid-row: 2 / 5;
+}
+
+.noticias {
+    background-color: #eeeeee;
+    grid-row: 2 / 5;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+.destaque {
+    background-color: #eeeeee;
+    grid-row: 2 / 5;
+    grid-column: 3;
+    
+    
+}
+.container-img {
+    padding: 10px;
+}
+.container-img, img {
+    width: 100px;
+    height: 100px;
+}
+
+.servicos {
+    background-color: #eeeeee;
+    grid-row: 5 /8;
+    grid-column: 1 /2;   
+}
+
+.resultados {
+    width: 400px;
+    background-color: #eeeeee;
+    grid-column: 2 /-1;
+    grid-row: 5 / 8;
+}
+
+.menu {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+footer {
+    background-color: #052b69;
+    grid-row: 8/-1;
+    grid-column: 1 / -1;
+}
+
+@media (min-width:150px) and (max-width:500px) {
+    .gridContainer {
+        display: grid;
+        grid-template-rows: repeat(13, 75px);
+        grid-template-columns: 3f;
+        gap: 10px 0;
+        text-align: center;
+    }
+    
+    
+    header {
+        background-color: aqua;
+        grid-column: 1;
+    }
+
+    nav {
+        background-color: bisque;
+        grid-row: 2 / 4;
+
+    }
+
+    .noticias {
+        background-color: blueviolet;
+        grid-row: 4 / 7;
+        grid-column: 1;
+       
+    }
+    
+    .destaque {
+        background-color: rgb(165, 136, 42);
+        grid-row: 7 / 9; 
+        grid-column: 1;
+    }
+
+    .containerImg {
+        padding: 10px;
+    }
+
+    .containerImg, img:nth-child(2) {
+        display: none;
+    }
+
+    .containerImg, img:nth-child(1) {
+        width: 300px;
+        display: inline-block;
+        
+    }   
+    
+    .servicos {
+        background-color: orange;
+        grid-row: 9 / 11;         
+    }
+    
+    .resultados {
+        background-color: green;
+        grid-row: 11 / 13 ;
+        grid-column: 1;
+    }
+    
+    footer {
+        background-color: blue;
+        grid-row: 13 / 14;
+        grid-column: 1;
+        
+    }
+}
