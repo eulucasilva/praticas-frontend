@@ -5,7 +5,7 @@
 # 📑Instruções práticas
 
 
-> Criação de um novo design para a página da web da UESC. A página deve ter dois designs diferentes de acordo com o tamanho da tela do disposiƟvo que a acessa. Para dispositivos com telas maiores que 500px deve ser levado em consideração o croqui da Figura 1. Para dispositivos com telas menores que 500px deve ser utilizado o croqui da Figura 2. 
+> Criação de um novo design para a página da web da UESC. A página deve ter dois designs diferentes de acordo com o tamanho da tela do dispositivo que a acessa. Para dispositivos com telas maiores que 500px deve ser levado em consideração o croqui da Figura 1. Para dispositivos com telas menores que 500px deve ser utilizado o croqui da Figura 2. 
 
 <div align="center">
 
