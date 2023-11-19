@@ -1,6 +1,6 @@
 # Sobre
 
-<p>Este repositório foi desenvolvido para adicionar a resolução dos exercícios da instrução prática 1 do módulo de Front End da Residência em Software promovido pela CEPEDI em parceria com a UESC.</p>
+<p>Este repositório foi desenvolvido para adicionar a resolução dos exercícios da instrução prática 2 do módulo de Front End da Residência em Software promovido pela CEPEDI em parceria com a UESC.</p>
 
 # 📑Instruções práticas
 
