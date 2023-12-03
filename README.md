@@ -15,7 +15,7 @@
 
 <div align="center">
 
-> ![Figura 2](image-1.png)
+> ![Figura 2](image-3.png)
 
 </div>
 
