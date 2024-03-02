@@ -1,0 +1,6 @@
+<div class="search-container">
+    <h1>Consultando a Wiki API</h1>
+    <input type="text" [(ngModel)]="searchTerm" name="searchTerm" placeholder="Digite o termo de busca"
+        (keydown.enter)="search()">
+    <button (click)="search()">Buscar</button>
+</div>

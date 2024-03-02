@@ -1,0 +1,26 @@
+.noticias>p {
+    font-family: 'Roboto';
+    font-size: 12px;
+    margin-left: 30px;
+}
+
+.noticias>p>a {
+    font-size: 12px;
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-size: 12px;
+    display: block;
+    color: hsl(246, 87%, 15%);
+}
+
+h3 {
+    background-color: white;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Lato';
+    color: hsl(246, 87%, 15%);
+    margin: 2px;
+    background-color: #d0e3f6;
+    border: 1px solid #d3d3d3;
+    padding: 3px;
+}

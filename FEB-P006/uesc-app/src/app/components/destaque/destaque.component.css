@@ -1,0 +1,20 @@
+.destaque>img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 80px;
+}
+
+h3 {
+    background-color: white;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Lato';
+    color: hsl(246, 87%, 15%);
+    margin: 2px;
+    border: 1px solid #d3d3d3;
+    background-color: #d0e3f6;
+    padding: 3px;
+}

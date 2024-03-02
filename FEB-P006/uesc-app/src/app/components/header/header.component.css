@@ -1,0 +1,13 @@
+h3 {
+    position: relative;
+    margin: 0;
+    font-weight: 300;
+    font-family: 'Lato';
+    z-index: 100;
+}
+
+img {
+    position: relative;
+    height: 35px;
+    z-index: 100;
+}

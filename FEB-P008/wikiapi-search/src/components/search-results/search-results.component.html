@@ -1,0 +1,8 @@
+<div *ngIf="results.length > 0" class="results-container">
+  <h2>Resultados para "{{ term }}"</h2>
+  <div *ngFor="let result of results" class="result-item">
+    <h3>{{ result.title }}</h3>
+    <p [innerHTML]="result.snippet | bold:term"></p>
+    <a [href]="'https://pt.wikipedia.org/?curid=' + result.pageid" target="_blank">Leia mais...</a>
+  </div>
+</div>

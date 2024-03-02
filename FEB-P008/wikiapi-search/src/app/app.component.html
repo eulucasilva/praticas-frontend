@@ -1,0 +1,2 @@
+<app-search-bar (searchEvent)="receiveTerm($event)" (resultsEvent)="receiveResults($event)"></app-search-bar>
+<app-search-results [results]="searchResults" [term]="term"></app-search-results>

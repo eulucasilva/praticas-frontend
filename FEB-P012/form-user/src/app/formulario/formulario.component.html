@@ -1,0 +1,83 @@
+<mat-toolbar color="primary">
+    <span style="display: flex; justify-content: center; align-items: center; width: 100%;">Dados do usuário</span>
+</mat-toolbar>
+
+
+<form [formGroup]="formUsuario" (ngSubmit)="submitForm()" class="form">
+    <mat-form-field>
+        <input matInput formControlName="nomeUsuario" placeholder="Nome do usuário">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput formControlName="senha" type="password" placeholder="Senha">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="form-field">
+        <input matInput formControlName="email" placeholder="Email">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput formControlName="nomeCompleto" placeholder="Nome completo">
+        <mat-error *ngIf="formUsuario.get('nomeCompleto')?.hasError('required')">
+            O nome completo é obrigatório.
+        </mat-error>
+        <mat-error *ngIf="formUsuario.get('nomeCompleto')?.hasError('nomeCompletoInvalido')">
+            Insira um nome e um sobrenome.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput formControlName="telefone" placeholder="Telefone">
+        <mat-error *ngIf="formUsuario.get('telefone')?.hasError('required')">
+            O número de telefone é obrigatório.
+        </mat-error>
+        <mat-error *ngIf="formUsuario.get('telefone')?.hasError('telefoneInvalido')">
+            Insira um número de telefone válido.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput formControlName="endereco" placeholder="Endereço">
+        <mat-error *ngIf="formUsuario.get('endereco')?.hasError('required')">
+            O endereço é obrigatório.
+        </mat-error>
+        <mat-error *ngIf="formUsuario.get('endereco')?.hasError('enderecoVazio')">
+            O endereço não pode estar vazio.
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput formControlName="dataNascimento" placeholder="Data de Nascimento" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="formUsuario.get('dataNascimento')?.hasError('dataNascimentoInvalida')">
+            Insira uma data de nascimento válida.
+        </mat-error>
+        <mat-error *ngIf="formUsuario.get('dataNascimento')?.hasError('idadeInsuficiente')">
+            O usuário deve ter pelo menos 18 anos.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Gênero</mat-label>
+        <mat-select formControlName="genero" required>
+            <mat-option *ngFor="let opcao of generoOpcoes" [value]="opcao">
+                {{ opcao }}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formUsuario.get('genero')?.hasError('required')">
+            Selecione um gênero.
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Profissão</mat-label>
+        <mat-select formControlName="profissao" required>
+            <mat-option *ngFor="let opcao of profissoesOpcoes" [value]="opcao">
+                {{ opcao }}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formUsuario.get('profissao')?.hasError('required')">
+            Selecione uma profissão.
+        </mat-error>
+    </mat-form-field>
+    <br><br>
+    <button type="submit" mat-raised-button color="primary" (click)="submitForm()">Enviar</button>
+</form>
