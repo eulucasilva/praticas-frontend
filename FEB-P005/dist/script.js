@@ -67,20 +67,47 @@ function getWeatherForecast() {
             .catch(function (error) { return reject(error); });
     });
 }
-function preencherNoticiasComPiada(piada) {
-    var noticiasElement = document.getElementById('noticias');
-    if (noticiasElement) {
-        var piadaElement = document.createElement('p');
-        piadaElement.textContent = piada;
-        noticiasElement.appendChild(piadaElement);
-    }
-    else {
-        console.error('Elemento de notícias não encontrado.');
-    }
+function preencherNoticiasComPiada() {
+    return __awaiter(this, void 0, void 0, function () {
+        var noticiasElement, i, piada, piadaElement, error_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    noticiasElement = document.getElementById('noticias');
+                    if (!noticiasElement) return [3 /*break*/, 7];
+                    i = 0;
+                    _a.label = 1;
+                case 1:
+                    if (!(i < 3)) return [3 /*break*/, 6];
+                    _a.label = 2;
+                case 2:
+                    _a.trys.push([2, 4, , 5]);
+                    return [4 /*yield*/, getJoke()];
+                case 3:
+                    piada = _a.sent();
+                    piadaElement = document.createElement('p');
+                    piadaElement.textContent = piada;
+                    noticiasElement.appendChild(piadaElement);
+                    return [3 /*break*/, 5];
+                case 4:
+                    error_1 = _a.sent();
+                    console.error('Erro ao obter piada:', error_1);
+                    return [3 /*break*/, 5];
+                case 5:
+                    i++;
+                    return [3 /*break*/, 1];
+                case 6: return [3 /*break*/, 8];
+                case 7:
+                    console.error('Elemento de notícias não encontrado.');
+                    _a.label = 8;
+                case 8: return [2 /*return*/];
+            }
+        });
+    });
 }
 function getCountryInfo() {
     return __awaiter(this, void 0, void 0, function () {
-        var response, data, randomCountry, countryName, capital, error_1;
+        var response, data, randomCountry, countryName, capital, error_2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -96,32 +123,77 @@ function getCountryInfo() {
                     capital = randomCountry.capital[0];
                     return [2 /*return*/, "Pa\u00EDs: ".concat(countryName, " | Capital: ").concat(capital)];
                 case 3:
-                    error_1 = _a.sent();
-                    console.error('Erro ao obter informações sobre países:', error_1);
+                    error_2 = _a.sent();
+                    console.error('Erro ao obter informações sobre países:', error_2);
                     return [2 /*return*/, 'Não foi possível obter informações sobre países.'];
                 case 4: return [2 /*return*/];
             }
         });
     });
 }
-function getRandomDogImages(amount) {
+function preencherResultadosComInfos() {
+    return __awaiter(this, void 0, void 0, function () {
+        var resultadosElement, i, infoPais, infoPaisElement, error_3;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    resultadosElement = document.querySelector('.resultados');
+                    if (!resultadosElement) return [3 /*break*/, 7];
+                    i = 0;
+                    _a.label = 1;
+                case 1:
+                    if (!(i < 3)) return [3 /*break*/, 6];
+                    _a.label = 2;
+                case 2:
+                    _a.trys.push([2, 4, , 5]);
+                    return [4 /*yield*/, getCountryInfo()];
+                case 3:
+                    infoPais = _a.sent();
+                    infoPaisElement = document.createElement('p');
+                    infoPaisElement.textContent = infoPais;
+                    resultadosElement.appendChild(infoPaisElement);
+                    return [3 /*break*/, 5];
+                case 4:
+                    error_3 = _a.sent();
+                    console.error('Erro ao obter informações sobre país:', error_3);
+                    return [3 /*break*/, 5];
+                case 5:
+                    i++;
+                    return [3 /*break*/, 1];
+                case 6: return [3 /*break*/, 8];
+                case 7:
+                    console.error('Elemento de resultados não encontrado.');
+                    _a.label = 8;
+                case 8: return [2 /*return*/];
+            }
+        });
+    });
+}
+function getRandomAcademicImages(amount) {
     if (amount === void 0) { amount = 3; }
     return __awaiter(this, void 0, void 0, function () {
-        var response, data, error_2;
+        var response, data, error_4;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch("https://dog.ceo/api/breeds/image/random/".concat(amount))];
+                    return [4 /*yield*/, fetch("https://api.unsplash.com/photos/random?query=academic&count=".concat(amount, "&client_id=evyJ-PShGSiWeBIuFqzlrTFfRFy0Jjq2EdAhtsAOjAg"))];
                 case 1:
                     response = _a.sent();
                     return [4 /*yield*/, response.json()];
                 case 2:
                     data = _a.sent();
-                    return [2 /*return*/, data.message];
+                    if (Array.isArray(data)) {
+                        return [2 /*return*/, data.map(function (image) { return image.urls.regular; })];
+                    }
+                    else {
+                        console.error('Resposta da API não está no formato esperado:', data);
+                        return [2 /*return*/, []];
+                    }
+                    return [3 /*break*/, 4];
                 case 3:
-                    error_2 = _a.sent();
-                    console.error('Erro ao obter imagens de cachorro:', error_2);
+                    error_4 = _a.sent();
+                    console.error('Erro ao obter imagens acadêmicas:', error_4);
                     return [2 /*return*/, []];
                 case 4: return [2 /*return*/];
             }
@@ -130,18 +202,18 @@ function getRandomDogImages(amount) {
 }
 function preencherDestaquesComImagens() {
     return __awaiter(this, void 0, void 0, function () {
-        var imagens, destaqueElement_1, error_3;
+        var imagens, destaqueElement_1, error_5;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
-                    return [4 /*yield*/, getRandomDogImages()];
+                    return [4 /*yield*/, getRandomAcademicImages()];
                 case 1:
                     imagens = _a.sent();
                     destaqueElement_1 = $('.destaque-carousel');
                     if (destaqueElement_1 && imagens.length > 0) {
                         imagens.forEach(function (imagemUrl) {
-                            destaqueElement_1.slick('slickAdd', "<img src=\"".concat(imagemUrl, "\" alt=\"Imagem Aleat\u00F3ria de Cachorro\">"));
+                            destaqueElement_1.slick('slickAdd', "<img src=\"".concat(imagemUrl, "\">"));
                         });
                     }
                     else {
@@ -149,8 +221,8 @@ function preencherDestaquesComImagens() {
                     }
                     return [3 /*break*/, 3];
                 case 2:
-                    error_3 = _a.sent();
-                    console.error('Erro ao preencher destaques com imagens:', error_3);
+                    error_5 = _a.sent();
+                    console.error('Erro ao preencher destaques com imagens:', error_5);
                     return [3 /*break*/, 3];
                 case 3: return [2 /*return*/];
             }
@@ -159,31 +231,15 @@ function preencherDestaquesComImagens() {
 }
 function preencherQuadrosAleatorios() {
     return __awaiter(this, void 0, void 0, function () {
-        var noticiasElement, piada, piadaElement, resultadosElement, infoPais, infoPaisElement;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    noticiasElement = document.getElementById('noticias');
-                    if (!noticiasElement) return [3 /*break*/, 2];
-                    return [4 /*yield*/, getJoke()];
+                case 0: return [4 /*yield*/, preencherNoticiasComPiada()];
                 case 1:
-                    piada = _a.sent();
-                    piadaElement = document.createElement('p');
-                    piadaElement.textContent = piada;
-                    noticiasElement.appendChild(piadaElement);
-                    _a.label = 2;
-                case 2:
+                    _a.sent();
                     preencherQuadroServicos();
-                    resultadosElement = document.querySelector('.resultados');
-                    if (!resultadosElement) return [3 /*break*/, 4];
-                    return [4 /*yield*/, getCountryInfo()];
-                case 3:
-                    infoPais = _a.sent();
-                    infoPaisElement = document.createElement('p');
-                    infoPaisElement.textContent = infoPais;
-                    resultadosElement.appendChild(infoPaisElement);
-                    _a.label = 4;
-                case 4:
+                    return [4 /*yield*/, preencherResultadosComInfos()];
+                case 2:
+                    _a.sent();
                     preencherDestaquesComImagens();
                     return [2 /*return*/];
             }
@@ -193,7 +249,7 @@ function preencherQuadrosAleatorios() {
 document.addEventListener('DOMContentLoaded', preencherQuadrosAleatorios);
 function preencherQuadroServicos() {
     return __awaiter(this, void 0, void 0, function () {
-        var quadroServicosElement, previsaoTempoElement, previsaoTempo, error_4;
+        var quadroServicosElement, previsaoTempoElement, previsaoTempo, error_6;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -211,8 +267,8 @@ function preencherQuadroServicos() {
                     quadroServicosElement.parentNode.appendChild(previsaoTempoElement);
                     return [3 /*break*/, 4];
                 case 3:
-                    error_4 = _a.sent();
-                    console.error('Erro ao preencher o quadro de Serviços:', error_4);
+                    error_6 = _a.sent();
+                    console.error('Erro ao preencher o quadro de Serviços:', error_6);
                     return [3 /*break*/, 4];
                 case 4: return [3 /*break*/, 6];
                 case 5:

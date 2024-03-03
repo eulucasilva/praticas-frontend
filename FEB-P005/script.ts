@@ -32,14 +32,21 @@ function getWeatherForecast(): Promise<string> {
   });
 }
 
-function preencherNoticiasComPiada(piada: string) {
+async function preencherNoticiasComPiada() {
   const noticiasElement = document.getElementById('noticias');
 
   if (noticiasElement) {
-    const piadaElement = document.createElement('p');
-    piadaElement.textContent = piada;
+    for (let i = 0; i < 3; i++) {
+      try {
+        const piada = await getJoke();
+        const piadaElement = document.createElement('p');
+        piadaElement.textContent = piada;
 
-    noticiasElement.appendChild(piadaElement);
+        noticiasElement.appendChild(piadaElement);
+      } catch (error) {
+        console.error('Erro ao obter piada:', error);
+      }
+    }
   } else {
     console.error('Elemento de notícias não encontrado.');
   }
@@ -61,25 +68,52 @@ async function getCountryInfo(): Promise<string> {
   }
 }
 
-async function getRandomDogImages(amount = 3) {
+async function preencherResultadosComInfos() {
+  const resultadosElement = document.querySelector('.resultados');
+
+  if (resultadosElement) {
+    for (let i = 0; i < 3; i++) {
+      try {
+        const infoPais = await getCountryInfo();
+        const infoPaisElement = document.createElement('p');
+        infoPaisElement.textContent = infoPais;
+
+        resultadosElement.appendChild(infoPaisElement);
+      } catch (error) {
+        console.error('Erro ao obter informações sobre país:', error);
+      }
+    }
+  } else {
+    console.error('Elemento de resultados não encontrado.');
+  }
+}
+
+
+async function getRandomAcademicImages(amount = 3) {
   try {
-    const response = await fetch(`https://dog.ceo/api/breeds/image/random/${amount}`);
+    const response = await fetch(`https://api.unsplash.com/photos/random?query=academic&count=${amount}&client_id=evyJ-PShGSiWeBIuFqzlrTFfRFy0Jjq2EdAhtsAOjAg`);
     const data = await response.json();
-    return data.message;
+
+    if (Array.isArray(data)) {
+      return data.map(image => image.urls.regular);
+    } else {
+      console.error('Resposta da API não está no formato esperado:', data);
+      return [];
+    }
   } catch (error) {
-    console.error('Erro ao obter imagens de cachorro:', error);
+    console.error('Erro ao obter imagens acadêmicas:', error);
     return [];
   }
 }
 
 async function preencherDestaquesComImagens() {
   try {
-    const imagens = await getRandomDogImages();
+    const imagens = await getRandomAcademicImages();
     const destaqueElement = $('.destaque-carousel');
 
     if (destaqueElement && imagens.length > 0) {
       imagens.forEach(imagemUrl => {
-        destaqueElement.slick('slickAdd', `<img src="${imagemUrl}" alt="Imagem Aleatória de Cachorro">`);
+        destaqueElement.slick('slickAdd', `<img src="${imagemUrl}">`);
       });
     } else {
       console.error('Elemento de destaques não encontrado ou imagens não obtidas.');
@@ -90,24 +124,9 @@ async function preencherDestaquesComImagens() {
 }
 
 async function preencherQuadrosAleatorios() {
-  const noticiasElement = document.getElementById('noticias');
-  if (noticiasElement) {
-    const piada = await getJoke();
-    const piadaElement = document.createElement('p');
-    piadaElement.textContent = piada;
-    noticiasElement.appendChild(piadaElement);
-  }
-
+  await preencherNoticiasComPiada();
   preencherQuadroServicos();
-
-  const resultadosElement = document.querySelector('.resultados');
-  if (resultadosElement) {
-    const infoPais = await getCountryInfo();
-    const infoPaisElement = document.createElement('p');
-    infoPaisElement.textContent = infoPais;
-    resultadosElement.appendChild(infoPaisElement);
-  }
-
+  await preencherResultadosComInfos();
   preencherDestaquesComImagens();
 }
 
