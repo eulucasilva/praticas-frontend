@@ -4,7 +4,7 @@
 
 # 📑Instruções práticas
 
-> Criação de um design para ser uƟlizado por uma agência de turismo. A tarefa consiste em criar uma classe de desƟnos, na qual deve incluir: o nome do destino, a imagem principal do destino, o que está incluso no pacote, o preço e se as taxas estão inclusasou não, a forma de pagamento e por fim o botão de comprar. O design deve ser flexível e deve ser capaz de abrigar 3 destinos quando a janela possuir uma largura maior que 1200px como ilustrado na Figura 1.
+> Criação de um design para ser utilizado por uma agência de turismo. A tarefa consiste em criar uma classe de destinos, na qual deve incluir: o nome do destino, a imagem principal do destino, o que está incluso no pacote, o preço e se as taxas estão inclusasou não, a forma de pagamento e por fim o botão de comprar. O design deve ser flexível e deve ser capaz de abrigar 3 destinos quando a janela possuir uma largura maior que 1200px como ilustrado na Figura 1.
 
 <div align="center">
 
@@ -28,7 +28,3 @@
 
 </div>
 
-# Autores
-
-| [<img src="https://avatars.githubusercontent.com/u/17802288?v=4" width=115><br><sub>Lucas dos Santos Silva</sub>](https://github.com/eulucasilva) |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------: |

@@ -16,9 +16,3 @@
 >5. Teste seu site em pelo menos dois navegadores web para verificar se está tudo correto;
 >6. Publique seu site no repositório github (https://github.com/) e disponibilize o endereço.
 >Observações: Use apenas HTML para criar seu website mesmo que você tenhaexperiência com CSS e JavaScript.
-
-
-# Autores
-
-| [<img src="https://avatars.githubusercontent.com/u/17802288?v=4" width=115><br><sub>Lucas dos Santos Silva</sub>](https://github.com/eulucasilva) | 
-|:-------------------------------------------------------------------------------------------------------------------------------------------------:|
