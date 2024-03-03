@@ -1,10 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap");
 
+
+header {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+header,
+footer {
+  background-color: #442b80;
+  ;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+}
+
 .container-destinos {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  height: 100vh;
   flex-wrap: wrap;
   gap: 30px;
+  margin-top: 30px;
 }
 
 img {
@@ -27,6 +56,7 @@ ul li:before {
   color: #5d34bb;
   border-radius: 8px;
 }
+
 .roteiro-destino {
   font-family: "Lato";
   font-size: 14px;
