@@ -2,24 +2,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Roboto:wght@300&display=swap");
 
 @media screen and (min-width: 500px) {
+
   html,
   body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     height: 100%;
-    width: 100%;
+    background-color: #f5d4b4;
   }
 
-  header > img {
-    height: 100%;
-    width: 15%;
+
+
+  header>img {
+    height: 70%;
+    width: 5%;
   }
 
   .container {
     display: grid;
-    height: 100vh;
-    width: 100vw;
+    width: 90vw;
+    margin: 0 auto;
+    /* Centraliza horizontalmente */
     grid-template-columns: 1fr 1fr 20%;
     grid-template-rows: 15vh 45vh 30vh 10vh;
     grid-template-areas:
@@ -34,17 +37,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #d0e3f6;
+    background: hsl(246, 87%, 15%);
     grid-area: header;
     margin-bottom: 10px;
   }
 
-  .menu > ul {
+  .menu>ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    clear:left;
+    clear: left;
     margin-top: 23px;
     margin-right: 0px;
     margin-bottom: 0px;
@@ -56,15 +59,17 @@
     text-align: center;
     font-size: 14px;
     font-family: 'Lato';
-    color: #307ecc;
+    color: hsl(246, 87%, 15%);
     margin: 2px;
-    border: 1px solid #d3d3d3; /* 2 pixels de largura, sólida e cor preta */
+    border: 1px solid #d3d3d3;
+    /* 2 pixels de largura, sólida e cor preta */
     padding: 3px;
   }
 
-  .menu > ul > li > a {
+
+  .menu>ul>li>a {
     display: block;
-    color: #307ecc;
+    color: hsl(246, 87%, 15%);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -72,20 +77,21 @@
     font-size: 12px;
   }
 
-  .menu > ul > li > a:hover {
-    background-color: #307ecc;
+  .menu>ul>li>a:hover {
+    background: hsl(246, 87%, 15%);
+    ;
     color: white;
   }
 
   footer {
     display: flex;
-    background-color: #d0e3f6;
+    background: hsl(246, 87%, 15%);
     grid-area: footer;
-    color: #307ecc;
+    color: #fff;
     font-size: 12px;
     font-family: 'Roboto';
     margin-top: 10px;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
   }
 
@@ -98,13 +104,13 @@
   .destaque {
     background-color: white;
     grid-area: destaque;
-    border: 1px solid #d3d3d3; 
+    border: 1px solid #d3d3d3;
     padding: 5px;
   }
 
-  .destaque > img {
+  .destaque>img {
     width: 100px;
-    height: 100px; 
+    height: 100px;
     margin-bottom: 10px;
     display: inline-block;
     margin-top: 10px;
@@ -114,42 +120,42 @@
   .noticias {
     background-color: #FFF;
     grid-area: noticias;
-    border: 1px solid #d3d3d3; 
+    border: 1px solid #d3d3d3;
     padding: 5px;
   }
 
-  .noticias > p {
+  .noticias>p {
     font-family: 'Roboto';
     font-size: 12px;
     margin-left: 30px;
   }
 
-  .noticias > p > a {
+  .noticias>p>a {
     font-size: 12px;
     text-decoration: none;
     font-family: 'Roboto';
     font-size: 12px;
     display: block;
-    color: #307ecc;
+    color: hsl(246, 87%, 15%);
   }
 
   .resultados {
     background-color: white;
     grid-area: resultados;
-    border: 1px solid #d3d3d3; 
+    border: 1px solid #d3d3d3;
     padding: 5px;
   }
 
   .servicos {
     background-color: white;
     grid-area: servicos;
-    border: 1px solid #d3d3d3; 
+    border: 1px solid #d3d3d3;
     padding: 5px;
   }
 }
 
-@media screen and (max-width: 500px){
-  .container{
+@media screen and (max-width: 500px) {
+  .container {
     display: grid;
     height: 100vh;
     width: 100vw;
@@ -160,12 +166,12 @@
       "menu"
       "noticias"
       "destaque"
-      "servicos" 
+      "servicos"
       "resultados"
       "footer";
     row-gap: 10px;
   }
-  
+
   header {
     display: flex;
     align-items: center;
@@ -174,17 +180,17 @@
     grid-area: header;
   }
 
-  header > img {
+  header>img {
     height: 100%;
     width: 15%;
   }
 
-  .menu > ul {
+  .menu>ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    clear:left;
+    clear: left;
     margin-top: 23px;
     margin-right: 0px;
     margin-bottom: 0px;
@@ -198,11 +204,12 @@
     font-family: 'Lato';
     color: #307ecc;
     margin: 2px;
-    border: 1px solid #d3d3d3; /* 2 pixels de largura, sólida e cor preta */
+    border: 1px solid #d3d3d3;
+    /* 2 pixels de largura, sólida e cor preta */
     padding: 3px;
   }
 
-  .menu > ul > li > a {
+  .menu>ul>li>a {
     display: block;
     color: #307ecc;
     text-align: center;
@@ -212,7 +219,7 @@
     font-size: 12px;
   }
 
-  .menu > ul > li > a:hover {
+  .menu>ul>li>a:hover {
     background-color: #307ecc;
     color: white;
   }
@@ -225,7 +232,7 @@
     font-size: 12px;
     font-family: 'Roboto';
     margin-top: 10px;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
   }
 
@@ -237,13 +244,13 @@
   .destaque {
     background-color: white;
     grid-area: destaque;
-    border: 1px solid #d3d3d3; 
+    border: 1px solid #d3d3d3;
     padding: 5px;
   }
 
-  .destaque > img {
+  .destaque>img {
     width: 100px;
-    height: 100px; 
+    height: 100px;
     margin-bottom: 10px;
     display: inline-block;
     margin-top: 10px;
@@ -253,17 +260,17 @@
   .noticias {
     background-color: #FFF;
     grid-area: noticias;
-    border: 1px solid #d3d3d3; 
+    border: 1px solid #d3d3d3;
     padding: 5px;
   }
 
-  .noticias > p {
+  .noticias>p {
     font-family: 'Roboto';
     font-size: 12px;
     margin-left: 30px;
   }
 
-  .noticias > p > a {
+  .noticias>p>a {
     font-size: 12px;
     text-decoration: none;
     font-family: 'Roboto';
@@ -275,13 +282,13 @@
   .resultados {
     background-color: white;
     grid-area: resultados;
-    border: 1px solid #d3d3d3; 
+    border: 1px solid #d3d3d3;
   }
 
   .servicos {
     background-color: white;
     grid-area: servicos;
-    border: 1px solid #d3d3d3; 
+    border: 1px solid #d3d3d3;
     padding: 5px;
   }
 }
