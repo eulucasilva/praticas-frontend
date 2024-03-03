@@ -1,11 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap");
 
+header {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+header,
+footer {
+  background-color: #442b80;
+  ;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+}
+
 .container-destinos {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  padding-bottom: 100px;
+  margin-top: 30px;
+
 }
 
 img {
@@ -29,6 +57,7 @@ ul li:before {
   border-radius: 8px;
   margin: 0 auto;
 }
+
 .roteiro-destino {
   font-family: "Lato";
   font-size: 14px;
@@ -74,17 +103,17 @@ ul li:before {
   background-color: #90d427;
   margin-left: 70px;
   margin-right: 70px;
-  
+
 }
 
-.roteiro-comprar:hover{
+.roteiro-comprar:hover {
   cursor: pointer;
   transition-duration: 0.5s;
   color: #90d427;
-  background-color: white ;
+  background-color: white;
 }
 
-.roteiro-comprar:active{
+.roteiro-comprar:active {
   transform: translate(0, 30px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
