@@ -1,0 +1,9 @@
+<app-carrinho (veiculosBuscados)="buscaRealizada($event)"></app-carrinho>
+
+<app-classes [categorias]="getCategorias()" (buscaCategoriaRealizada)="onBuscaCategoriaRealizada($event)"
+  title="Categoria" />
+<app-objetos [veiculos]="veiculos" (buscaObjetoRealizada)="onBuscaObjetoRealizada($event)"
+  [title]="categoria ? categoria : 'Veiculos'" />
+<app-propriedades />
+
+<app-valor-propriedade />

@@ -1,0 +1,6 @@
+<div>
+    <h2>{{title}}</h2>
+    <div *ngFor="let categoria of categorias">
+        <span (click)="buscaCategoria(categoria)">{{categoria}}</span>
+    </div>
+</div>

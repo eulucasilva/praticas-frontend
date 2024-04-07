@@ -1,0 +1,11 @@
+<div class="container">
+    <h1>Formulário</h1>
+    <form class="mat-form">
+        <div *ngFor="let campo of camposDoForm">
+            <mat-form-field appearance="fill">
+                <mat-label>{{ campo.rotulo }}</mat-label>
+                <input matInput [type]="campo.tipo" [name]="campo.nome" />
+            </mat-form-field>
+        </div>
+    </form>
+</div>
